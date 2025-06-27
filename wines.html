@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YANE BANE - Домашнє вино</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="back-icon" onclick="window.location.href='index.html'">
+      ←
+    </div>
+    <div class="cart-icon" onclick="window.location.href='cart.html'">
+      🛒 <span id="cart-count">0</span>
+    </div>
+    <div class="language-switcher">
+      <button onclick="setLanguage('uk')">🇺🇦 UA</button>
+      <button onclick="setLanguage('en')">🇬🇧 EN</button>
+    </div>
+  </div>
+  <h1 id="store-title">🍷 YANE BANE</h1>
+  <h2 id="select-product">Домашнє вино:</h2>
+  <div class="product-list">
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Red+Wine" alt="Вино червоне">
+      <h3 id="product1-name">Вино червоне</h3>
+      <p id="product1-price">Ціна: 300₴</p>
+      <button onclick="addToCart('Вино червоне', 300)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=White+Wine" alt="Вино біле">
+      <h3 id="product2-name">Вино біле</h3>
+      <p id="product2-price">Ціна: 310₴</p>
+      <button onclick="addToCart('Вино біле', 310)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Rose+Wine" alt="Вино рожеве">
+      <h3 id="product3-name">Вино рожеве</h3>
+      <p id="product3-price">Ціна: 305₴</p>
+      <button onclick="addToCart('Вино рожеве', 305)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Berry+Wine" alt="Вино ягідне">
+      <h3 id="product4-name">Вино ягідне</h3>
+      <p id="product4-price">Ціна: 320₴</p>
+      <button onclick="addToCart('Вино ягідне', 320)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Apple+Wine" alt="Вино яблучне">
+      <h3 id="product5-name">Вино яблучне</h3>
+      <p id="product5-price">Ціна: 315₴</p>
+      <button onclick="addToCart('Вино яблучне', 315)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Plum+Wine" alt="Вино сливове">
+      <h3 id="product6-name">Вино сливове</h3>
+      <p id="product6-price">Ціна: 325₴</p>
+      <button onclick="addToCart('Вино сливове', 325)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Peach+Wine" alt="Вино персикове">
+      <h3 id="product7-name">Вино персикове</h3>
+      <p id="product7-price">Ціна: 330₴</p>
+      <button onclick="addToCart('Вино персикове', 330)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Cherry+Wine" alt="Вино вишневе">
+      <h3 id="product8-name">Вино вишневе</h3>
+      <p id="product8-price">Ціна: 305₴</p>
+      <button onclick="addToCart('Вино вишневе', 305)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Grape+Wine" alt="Вино виноградне">
+      <h3 id="product9-name">Вино виноградне</h3>
+      <p id="product9-price">Ціна: 335₴</p>
+      <button onclick="addToCart('Вино виноградне', 335)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Honey+Wine" alt="Вино медове">
+      <h3 id="product10-name">Вино медове</h3>
+      <p id="product10-price">Ціна: 340₴</p>
+      <button onclick="addToCart('Вино медове', 340)">Додати до кошика</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
