@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YANE BANE - Магазин</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="cart-icon" onclick="showCart()">
+      🛒 <span id="cart-count">0</span>
+    </div>
+    <div class="language-switcher">
+      <button onclick="setLanguage('uk')">🇺🇦 UA</button>
+      <button onclick="setLanguage('en')">🇬🇧 EN</button>
+    </div>
+  </div>
+  <h1 id="store-title">🍷 YANE BANE</h1>
+  <h2 id="select-product">Оберіть товар:</h2>
+  <div class="product-list">
+    <div class="product">
+      <h3 id="product1-name">Вино червоне</h3>
+      <p id="product1-price">Ціна: 300₴</p>
+      <button onclick="addToCart('Вино червоне', 300)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <h3 id="product2-name">Настоянка м’ятна</h3>
+      <p id="product2-price">Ціна: 220₴</p>
+      <button onclick="addToCart('Настоянка м’ятна', 220)">Додати до кошика</button>
+    </div>
+  </div>
+  <div class="cart" id="cart">
+    <h2 id="cart-title">Кошик</h2>
+    <ul id="cart-items"></ul>
+    <p id="cart-total-text">Сума: <span id="cart-total">0</span>₴</p>
+    <button id="checkout-btn" onclick="sendOrder()">Оформити замовлення</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
