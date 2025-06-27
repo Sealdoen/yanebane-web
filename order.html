@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YANE BANE - Оформити замовлення</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="back-icon" onclick="window.location.href='cart.html'">
+      ←
+    </div>
+    <div class="cart-icon" onclick="window.location.href='cart.html'">
+      🛒 <span id="cart-count">0</span>
+    </div>
+    <div class="language-switcher">
+      <button onclick="setLanguage('uk')">🇺🇦 UA</button>
+      <button onclick="setLanguage('en')">🇬🇧 EN</button>
+    </div>
+  </div>
+  <h1 id="order-title">Оформити замовлення</h1>
+  <div class="order-content">
+    <form id="order-form">
+      <label for="name">Ім’я:</label><br>
+      <input type="text" id="name" name="name" required><br>
+      <label for="phone">Телефон:</label><br>
+      <input type="tel" id="phone" name="phone" required><br>
+      <label for="address">Адреса доставки:</label><br>
+      <input type="text" id="address" name="address" required><br>
+      <button type="submit" id="submit-order">Замовити</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
