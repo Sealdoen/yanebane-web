@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YANE BANE - Магазин</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>🍷 YANE BANE</h1>
+  <h2>Оберіть товар:</h2>
+  <div class="product-list">
+    <div class="product">
+      <h3>Вино червоне</h3>
+      <p>Ціна: 300₴</p>
+      <button onclick="addToCart('Вино червоне', 300)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <h3>Настоянка м’ятна</h3>
+      <p>Ціна: 220₴</p>
+      <button onclick="addToCart('Настоянка м’ятна', 220)">Додати до кошика</button>
+    </div>
+  </div>
+  <div class="cart">
+    <h2>Кошик</h2>
+    <ul id="cart-items"></ul>
+    <p>Сума: <span id="cart-total">0</span>₴</p>
+    <button onclick="sendOrder()">Оформити замовлення</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
