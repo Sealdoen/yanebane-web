@@ -107,7 +107,6 @@ h2 {
 .product {
   background-color: #000000;
   border: 2px solid #ffffff;
-  color: #ff0000;
   padding: 20px;
   border-radius: 10px;
   width: 250px;
@@ -119,12 +118,12 @@ h2 {
 
 .product h3 {
   margin: 10px 0 5px;
-  color: #ff0000; /* Явне визначення кольору */
+  color: #ffffff; /* Змінено з #ff0000 на #ffffff */
 }
 
 .product p {
   margin: 5px 0;
-  color: #ff0000; /* Явне визначення кольору */
+  color: #ffffff; /* Змінено з #ff0000 на #ffffff */
 }
 
 .product img {
