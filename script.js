@@ -153,10 +153,14 @@ function updateUI() {
     liqueurs: [250, 260, 255, 270, 280, 265, 275, 260, 285, 270],
     wines: [300, 310, 305, 320, 315, 325, 330, 305, 335, 340]
   };
-  if (document.getElementById('product1-name')) {
+  if (['tinctures', 'liqueurs', 'wines'].includes(page) && document.getElementById('product1-name')) {
     for (let i = 1; i <= 10; i++) {
-      document.getElementById(`product${i}-name`).textContent = productNames[page][i - 1] || '';
-      document.getElementById(`product${i}-price`).textContent = `${translations[lang].price}: ${prices[page][i - 1]}₴`;
+      const nameElement = document.getElementById(`product${i}-name`);
+      const priceElement = document.getElementById(`product${i}-price`);
+      if (nameElement && priceElement) {
+        nameElement.textContent = productNames[page][i - 1] || '';
+        priceElement.textContent = `${translations[lang].price}: ${prices[page][i - 1]}₴`;
+      }
     }
   }
   if (document.querySelectorAll('.product button')) {
@@ -180,7 +184,11 @@ function updateUI() {
 }
 
 function addToCart(product, price) {
-  cart.push({ product, price });
+  if (!product || !price) {
+    alert('Помилка: Не вдалося додати товар. Перевірте назву та ціну.');
+    return;
+  }
+  cart.push({ product, price: parseInt(price) });
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCart();
   alert(`${product} доданий до кошика!`);
