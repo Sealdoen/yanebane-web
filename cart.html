@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YANE BANE - Кошик</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="back-icon" onclick="window.location.href='index.html'">
+      ←
+    </div>
+    <div class="cart-icon" onclick="window.location.href='cart.html'">
+      🛒 <span id="cart-count">0</span>
+    </div>
+    <div class="language-switcher">
+      <button onclick="setLanguage('uk')">🇺🇦 UA</button>
+      <button onclick="setLanguage('en')">🇬🇧 EN</button>
+    </div>
+  </div>
+  <h1 id="cart-title">Кошик</h1>
+  <div class="cart-content">
+    <ul id="cart-items"></ul>
+    <p id="cart-total-text">Сума: <span id="cart-total">0</span>₴</p>
+    <button id="checkout-btn" onclick="window.location.href='order.html'">Оформити замовлення</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
