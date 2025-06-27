@@ -96,6 +96,19 @@ function setLanguage(newLang) {
   lang = newLang;
   localStorage.setItem('lang', lang);
   updateUI();
+  const dropdown = document.querySelector('.language-dropdown');
+  if (dropdown) dropdown.classList.remove('show'); // Ховаємо dropdown після вибору
+  updateLanguageButton();
+}
+
+function updateLanguageButton() {
+  const button = document.querySelector('.language-button');
+  if (button) button.textContent = lang === 'uk' ? '🇺🇦 UA' : '🇬🇧 EN';
+}
+
+function toggleLanguageDropdown() {
+  const dropdown = document.querySelector('.language-dropdown');
+  if (dropdown) dropdown.classList.toggle('show');
 }
 
 function updateUI() {
@@ -225,7 +238,7 @@ function updateCart() {
       cartItems.innerHTML = '<li>' + translations[lang].emptyCart + '</li>';
     }
     if (cartTotal) cartTotal.textContent = total;
-    if (cartTotalText) cartTotalText.textContent = `${translations[lang].total}: `; // Явне оновлення тексту суми
+    if (cartTotalText) cartTotalText.textContent = `${translations[lang].total}: `;
   }
   if (cartCount) {
     cartCount.textContent = cart.length;
@@ -254,4 +267,17 @@ function sendOrder() {
 }
 
 // Автоматичне оновлення при завантаженні сторінки
-updateCart();
+window.onload = function() {
+  updateUI();
+  updateCart();
+  updateLanguageButton(); // Ініціалізація кнопки мови
+};
+
+// Додаємо обробник подій для закриття dropdown при кліку поза ним
+document.addEventListener('click', function(event) {
+  const dropdown = document.querySelector('.language-dropdown');
+  const button = document.querySelector('.language-button');
+  if (dropdown && button && !button.contains(event.target) && !dropdown.contains(event.target)) {
+    dropdown.classList.remove('show');
+  }
+});
