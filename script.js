@@ -110,7 +110,7 @@ function updateLanguageButton() {
   if (button) {
     button.textContent = lang === 'uk' ? '🇺🇦 UA' : '🇬🇧 EN';
     const arrow = button.querySelector('.arrow');
-    if (arrow) arrow.textContent = ' ▶'; // Початкова стрілка вправо
+    if (arrow) arrow.textContent = ' ▶';
   }
 }
 
@@ -121,20 +121,17 @@ function toggleLanguageDropdown() {
     const isActive = button.classList.toggle('active');
     dropdown.classList.toggle('show', isActive);
     const arrow = button.querySelector('.arrow');
-    if (arrow) arrow.textContent = isActive ? ' ▼' : ' ▶'; // Зміна стрілки
+    if (arrow) arrow.textContent = isActive ? ' ▼' : ' ▶';
   }
 }
 
 function updateUI() {
-  // Оновлення заголовка
   const storeTitle = document.getElementById('store-title');
   if (storeTitle) storeTitle.textContent = translations[lang].title;
 
-  // Оновлення тексту "Оберіть товар:" або "Select a product:"
   const selectProduct = document.getElementById('select-product');
   if (selectProduct) selectProduct.textContent = translations[lang].selectProduct;
 
-  // Оновлення назв категорій на index.html
   if (document.querySelector('.category-list')) {
     document.querySelectorAll('.category h3').forEach((el, index) => {
       const categories = [translations[lang].tinctures, translations[lang].liqueurs, translations[lang].wines];
@@ -142,7 +139,6 @@ function updateUI() {
     });
   }
 
-  // Оновлення назв і цін продуктів на сторінках tinctures, liqueurs, wines
   const page = window.location.pathname.split('/').pop().replace('.html', '');
   const productNames = {
     tinctures: [
@@ -193,19 +189,17 @@ function updateUI() {
       const priceElement = document.getElementById(`product${i}-price`);
       if (nameElement && priceElement) {
         nameElement.textContent = productNames[page][i - 1] || 'Назва не знайдена';
-        priceElement.textContent = `${translations[lang].price}: ${prices[page][i - 1]}₴` || 'Ціна не вказана';
+        priceElement.textContent = `${translations[lang].price}: ${prices[page][i - 1]}₴`;
       }
     }
   }
 
-  // Оновлення тексту кнопок
   if (document.querySelectorAll('.product button')) {
     document.querySelectorAll('.product button').forEach(button => {
       button.textContent = translations[lang].addToCart;
     });
   }
 
-  // Оновлення тексту кошика
   const cartTitle = document.getElementById('cart-title');
   if (cartTitle) cartTitle.textContent = translations[lang].cart;
 
@@ -215,7 +209,6 @@ function updateUI() {
   const checkoutBtn = document.getElementById('checkout-btn');
   if (checkoutBtn) checkoutBtn.textContent = translations[lang].checkout;
 
-  // Оновлення кошика
   updateCart();
 }
 
@@ -234,8 +227,7 @@ function updateCart() {
   const cartItems = document.getElementById('cart-items');
   const cartTotal = document.getElementById('cart-total');
   const cartCount = document.getElementById('cart-count');
-  const cartTotalText = document.getElementById('cart-total-text');
-  if (cartItems) {
+  if (cartItems && cartTotal && cartCount) {
     cartItems.innerHTML = '';
     let total = 0;
     if (cart.length > 0) {
@@ -248,10 +240,7 @@ function updateCart() {
     } else {
       cartItems.innerHTML = '<li>' + translations[lang].emptyCart + '</li>';
     }
-    if (cartTotal) cartTotal.textContent = total;
-    if (cartTotalText) cartTotalText.textContent = `${translations[lang].total}: `;
-  }
-  if (cartCount) {
+    cartTotal.textContent = total;
     cartCount.textContent = cart.length;
   }
 }
@@ -263,6 +252,10 @@ function removeFromCart(index) {
 }
 
 function sendOrder() {
+  if (typeof window.Telegram === 'undefined' || !window.Telegram.WebApp) {
+    alert('Telegram WebApp не підключено. Перевірте середовище.');
+    return;
+  }
   const tg = window.Telegram.WebApp;
   if (cart.length === 0) {
     alert(translations[lang].emptyCart);
@@ -277,14 +270,12 @@ function sendOrder() {
   tg.close();
 }
 
-// Автоматичне оновлення при завантаженні сторінки
 window.onload = function() {
   updateUI();
   updateCart();
   updateLanguageButton();
 };
 
-// Додаємо обробник подій для закриття dropdown при кліку поза ним
 document.addEventListener('click', function(event) {
   const dropdown = document.querySelector('.language-dropdown');
   const button = document.querySelector('.language-button');
