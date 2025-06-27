@@ -177,19 +177,12 @@ h2 {
 
 .product h3 {
   margin: 10px 0 5px;
-  color: #ffffff !important;
+  color: #ffffff;
 }
 
 .product p {
   margin: 5px 0;
-  color: #ffffff !important;
-}
-
-.product img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .product button {
@@ -277,48 +270,6 @@ h2 {
   font-size: 1.2rem;
   color: #ff0000;
   margin-left: 10px;
-}
-
-.order-content {
-  background-color: #000000;
-  border: 2px solid #ffffff;
-  color: #ff0000;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px auto;
-  max-width: 400px;
-  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
-}
-
-.order-content label {
-  text-align: left;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.order-content input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ff0000;
-  border-radius: 5px;
-  background-color: #333333;
-  color: #ff0000;
-}
-
-.order-content button {
-  background-color: #ff0000;
-  border: none;
-  padding: 10px 20px;
-  color: #ffffff;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  width: 100%;
-}
-
-.order-content button:hover {
-  background-color: #cc0000;
 }
 
 @media (max-width: 600px) {
