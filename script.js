@@ -3,7 +3,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 const translations = {
   uk: {
-    title: '🍷 YANE BANE',
+    title: 'YANE BANE',
     selectProduct: 'Оберіть товар:',
     tinctures: 'Настоянки',
     liqueurs: 'Лікери',
@@ -47,7 +47,7 @@ const translations = {
     remove: 'Видалити'
   },
   en: {
-    title: '🍷 YANE BANE',
+    title: 'YANE BANE',
     selectProduct: 'Select a product:',
     tinctures: 'Tinctures',
     liqueurs: 'Liqueurs',
@@ -214,9 +214,6 @@ function updateUI() {
 
   const checkoutBtn = document.getElementById('checkout-btn');
   if (checkoutBtn) checkoutBtn.textContent = translations[lang].checkout;
-
-  const orderTitle = document.getElementById('order-title');
-  if (orderTitle) orderTitle.textContent = translations[lang].checkout;
 
   // Оновлення кошика
   updateCart();
