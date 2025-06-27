@@ -109,55 +109,59 @@ function updateUI() {
       el.textContent = categories[index];
     });
   }
-  if (document.querySelectorAll('.product')) {
-    document.querySelectorAll('.product').forEach((product, index) => {
-      const page = window.location.pathname.split('/').pop().replace('.html', '');
-      const productNames = {
-        tinctures: [
-          translations[lang].product1_tincture,
-          translations[lang].product2_tincture,
-          translations[lang].product3_tincture,
-          translations[lang].product4_tincture,
-          translations[lang].product5_tincture,
-          translations[lang].product6_tincture,
-          translations[lang].product7_tincture,
-          translations[lang].product8_tincture,
-          translations[lang].product9_tincture,
-          translations[lang].product10_tincture
-        ],
-        liqueurs: [
-          translations[lang].product1_liqueur,
-          translations[lang].product2_liqueur,
-          translations[lang].product3_liqueur,
-          translations[lang].product4_liqueur,
-          translations[lang].product5_liqueur,
-          translations[lang].product6_liqueur,
-          translations[lang].product7_liqueur,
-          translations[lang].product8_liqueur,
-          translations[lang].product9_liqueur,
-          translations[lang].product10_liqueur
-        ],
-        wines: [
-          translations[lang].product1_wine,
-          translations[lang].product2_wine,
-          translations[lang].product3_wine,
-          translations[lang].product4_wine,
-          translations[lang].product5_wine,
-          translations[lang].product6_wine,
-          translations[lang].product7_wine,
-          translations[lang].product8_wine,
-          translations[lang].product9_wine,
-          translations[lang].product10_wine
-        ]
-      };
-      const prices = {
-        tinctures: [220, 230, 240, 225, 250, 235, 215, 245, 230, 255],
-        liqueurs: [250, 260, 255, 270, 280, 265, 275, 260, 285, 270],
-        wines: [300, 310, 305, 320, 315, 325, 330, 305, 335, 340]
-      };
-      product.querySelector('h3').textContent = productNames[page][index] || '';
-      product.querySelector('p').textContent = `${translations[lang].price}: ${prices[page][index]}₴`;
-      product.querySelector('button').textContent = translations[lang].addToCart;
+  const page = window.location.pathname.split('/').pop().replace('.html', '');
+  const productNames = {
+    tinctures: [
+      translations[lang].product1_tincture,
+      translations[lang].product2_tincture,
+      translations[lang].product3_tincture,
+      translations[lang].product4_tincture,
+      translations[lang].product5_tincture,
+      translations[lang].product6_tincture,
+      translations[lang].product7_tincture,
+      translations[lang].product8_tincture,
+      translations[lang].product9_tincture,
+      translations[lang].product10_tincture
+    ],
+    liqueurs: [
+      translations[lang].product1_liqueur,
+      translations[lang].product2_liqueur,
+      translations[lang].product3_liqueur,
+      translations[lang].product4_liqueur,
+      translations[lang].product5_liqueur,
+      translations[lang].product6_liqueur,
+      translations[lang].product7_liqueur,
+      translations[lang].product8_liqueur,
+      translations[lang].product9_liqueur,
+      translations[lang].product10_liqueur
+    ],
+    wines: [
+      translations[lang].product1_wine,
+      translations[lang].product2_wine,
+      translations[lang].product3_wine,
+      translations[lang].product4_wine,
+      translations[lang].product5_wine,
+      translations[lang].product6_wine,
+      translations[lang].product7_wine,
+      translations[lang].product8_wine,
+      translations[lang].product9_wine,
+      translations[lang].product10_wine
+    ]
+  };
+  const prices = {
+    tinctures: [220, 230, 240, 225, 250, 235, 215, 245, 230, 255],
+    liqueurs: [250, 260, 255, 270, 280, 265, 275, 260, 285, 270],
+    wines: [300, 310, 305, 320, 315, 325, 330, 305, 335, 340]
+  };
+  if (document.getElementById('product1-name')) {
+    for (let i = 1; i <= 10; i++) {
+      document.getElementById(`product${i}-name`).textContent = productNames[page][i - 1] || '';
+      document.getElementById(`product${i}-price`).textContent = `${translations[lang].price}: ${prices[page][i - 1]}₴`;
+    }
+  }
+  if (document.querySelectorAll('.product button')) {
+    document.querySelectorAll('.product button').forEach(button => {
+      button.textContent = translations[lang].addToCart;
     });
   }
   if (document.getElementById('cart-title')) {
@@ -183,7 +187,6 @@ function addToCart(product, price) {
 }
 
 function updateCart() {
-  // Завжди беремо актуальний стан з localStorage
   cart = JSON.parse(localStorage.getItem('cart')) || [];
   const cartItems = document.getElementById('cart-items');
   const cartTotal = document.getElementById('cart-total');
