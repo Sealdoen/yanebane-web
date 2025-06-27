@@ -183,6 +183,7 @@ function addToCart(product, price) {
 }
 
 function updateCart() {
+  // Завжди беремо актуальний стан з localStorage
   cart = JSON.parse(localStorage.getItem('cart')) || [];
   const cartItems = document.getElementById('cart-items');
   const cartTotal = document.getElementById('cart-total');
@@ -190,12 +191,16 @@ function updateCart() {
   if (cartItems) {
     cartItems.innerHTML = '';
     let total = 0;
-    cart.forEach((item, index) => {
-      const li = document.createElement('li');
-      li.innerHTML = `${item.product} - ${item.price}₴ <span class="remove-item" onclick="removeFromCart(${index})">✖</span>`;
-      cartItems.appendChild(li);
-      total += item.price;
-    });
+    if (cart.length > 0) {
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `${item.product} - ${item.price}₴ <span class="remove-item" onclick="removeFromCart(${index})">✖</span>`;
+        cartItems.appendChild(li);
+        total += item.price;
+      });
+    } else {
+      cartItems.innerHTML = '<li>' + translations[lang].emptyCart + '</li>';
+    }
     cartTotal.textContent = total;
   }
   if (cartCount) {
