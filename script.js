@@ -203,7 +203,6 @@ function addToCart(product, price) {
   cart.push({ product, price: parseInt(price) });
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCart();
-  // Прибрано спливаюче вікно alert(`${product} доданий до кошика!`);
 }
 
 function updateCart() {
@@ -252,5 +251,5 @@ function sendOrder() {
   tg.close();
 }
 
-// Початкове оновлення UI
-updateUI();
+// Автоматичне оновлення при завантаженні сторінки
+updateCart();
