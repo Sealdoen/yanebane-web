@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YANE BANE - Домашнє вино</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="back-icon" onclick="window.location.href='index.html'">
+      ←
+    </div>
+    <div class="cart-icon" onclick="window.location.href='cart.html'">
+      🛒 <span id="cart-count">0</span>
+    </div>
+    <div class="language-switcher">
+      <button onclick="setLanguage('uk')">🇺🇦 UA</button>
+      <button onclick="setLanguage('en')">🇬🇧 EN</button>
+    </div>
+  </div>
+  <h2>Оберіть товар:</h2>
+  <div class="product-list">
+    <div class="product">
+      <img src="images/red_wine.jpg" alt="Red Wine">
+      <h3 id="product1-name">Вино червоне</h3>
+      <p id="product1-price">Ціна: 300₴</p>
+      <button onclick="addToCart(document.getElementById('product1-name').textContent, parseInt(document.getElementById('product1-price').textContent.split(' ')[1]))">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="images/white_wine.jpg" alt="White Wine">
+      <h3 id="product2-name">Вино біле</h3>
+      <p id="product2-price">Ціна: 310₴</p>
+      <button onclick="addToCart(document.getElementById('product2-name').textContent, parseInt(document.getElementById('product2-price').textContent.split(' ')[1]))">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="images/rose_wine.jpg" alt="Rose Wine">
+      <h3 id="product3-name">Вино рожеве</h3>
+      <p id="product3-price">Ціна: 305₴</p>
+      <button onclick="addToCart(document.getElementById('product3-name').textContent, parseInt(document.getElementById('product3-price').textContent.split(' ')[1]))">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="images/berry_wine.jpg" alt="Berry Wine">
+      <h3 id="product4-name">Вино ягідне</h3>
+      <p id="product4-price">Ціна: 320₴</p>
+      <button onclick="addToCart(document.getElementById('product4-name').textContent, parseInt(document.getElementById('product4-price').textContent.split(' ')[1]))">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="images/apple_wine.jpg" alt="Apple Wine">
+      <h3 id="product5-name">Вино яблучне</h3>
+      <p id="product5-price">Ціна: 315₴</p>
+      <button onclick="addToCart(document.getElementById('product5-name').textContent, parseInt(document.getElementById('product5-price').textContent.split(' ')[1]))">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="images/plum_wine.jpg" alt="Plum Wine">
+      <h3 id="product6-name">Вино сливове</h3>
+      <p id="product6-price">Ціна: 325₴</p>
+      <button onclick="addToCart(document.getElementById('product6-name').textContent, parseInt(document.getElementById('product6-price').textContent.split(' ')[1]))">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="images/peach_wine.jpg" alt="Peach Wine">
+      <h3 id="product7-name">Вино персикове</h3>
+      <p id="product7-price">Ціна: 330₴</p>
+      <button onclick="addToCart(document.getElementById('product7-name').textContent, parseInt(document.getElementById('product7-price').textContent.split(' ')[1]))">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="images/cherry_wine.jpg" alt="Cherry Wine">
+      <h3 id="product8-name">Вино вишневе</h3>
+      <p id="product8-price">Ціна: 305₴</p>
+      <button onclick="addToCart(document.getElementById('product8-name').textContent, parseInt(document.getElementById('product8-price').textContent.split(' ')[1]))">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="images/grape_wine.jpg" alt="Grape Wine">
+      <h3 id="product9-name">Вино виноградне</h3>
+      <p id="product9-price">Ціна: 335₴</p>
+      <button onclick="addToCart(document.getElementById('product9-name').textContent, parseInt(document.getElementById('product9-price').textContent.split(' ')[1]))">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="images/honey_wine.jpg" alt="Honey Wine">
+      <h3 id="product10-name">Вино медове</h3>
+      <p id="product10-price">Ціна: 340₴</p>
+      <button onclick="addToCart(document.getElementById('product10-name').textContent, parseInt(document.getElementById('product10-price').textContent.split(' ')[1]))">Додати до кошика</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
