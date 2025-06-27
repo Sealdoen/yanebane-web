@@ -100,7 +100,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Повертаємо відстань між вікнами */
+  gap: 20px;
   padding: 20px;
 }
 
