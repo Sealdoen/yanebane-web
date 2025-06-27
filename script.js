@@ -210,6 +210,7 @@ function updateCart() {
   const cartItems = document.getElementById('cart-items');
   const cartTotal = document.getElementById('cart-total');
   const cartCount = document.getElementById('cart-count');
+  const cartTotalText = document.getElementById('cart-total-text');
   if (cartItems) {
     cartItems.innerHTML = '';
     let total = 0;
@@ -223,7 +224,8 @@ function updateCart() {
     } else {
       cartItems.innerHTML = '<li>' + translations[lang].emptyCart + '</li>';
     }
-    cartTotal.textContent = total;
+    if (cartTotal) cartTotal.textContent = total;
+    if (cartTotalText) cartTotalText.textContent = `${translations[lang].total}: `; // Явне оновлення тексту суми
   }
   if (cartCount) {
     cartCount.textContent = cart.length;
