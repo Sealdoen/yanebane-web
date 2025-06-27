@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YANE BANE - Магазин</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="cart-icon" onclick="window.location.href='cart.html'">
+      🛒 <span id="cart-count">0</span>
+    </div>
+    <div class="language-switcher">
+      <button onclick="setLanguage('uk')">🇺🇦 UA</button>
+      <button onclick="setLanguage('en')">🇬🇧 EN</button>
+    </div>
+  </div>
+  <h1 id="store-title">🍷 YANE BANE</h1>
+  <h2 id="select-category">Оберіть категорію:</h2>
+  <div class="category-list">
+    <div class="category" onclick="window.location.href='tinctures.html'">
+      <h3>Настоянки</h3>
+    </div>
+    <div class="category" onclick="window.location.href='liqueurs.html'">
+      <h3>Лікери</h3>
+    </div>
+    <div class="category" onclick="window.location.href='wines.html'">
+      <h3>Домашнє вино</h3>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YANE BANE - Настоянки</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="cart-icon" onclick="window.location.href='cart.html'">
+      🛒 <span id="cart-count">0</span>
+    </div>
+    <div class="language-switcher">
+      <button onclick="setLanguage('uk')">🇺🇦 UA</button>
+      <button onclick="setLanguage('en')">🇬🇧 EN</button>
+    </div>
+  </div>
+  <h1 id="store-title">🍷 YANE BANE</h1>
+  <h2 id="select-product">Настоянки:</h2>
+  <div class="product-list">
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Mint+Tincture" alt="Настоянка м’ятна">
+      <h3 id="product1-name">Настоянка м’ятна</h3>
+      <p id="product1-price">Ціна: 220₴</p>
+      <button onclick="addToCart('Настоянка м’ятна', 220)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Herbal+Tincture" alt="Настоянка трав’яна">
+      <h3 id="product2-name">Настоянка трав’яна</h3>
+      <p id="product2-price">Ціна: 230₴</p>
+      <button onclick="addToCart('Настоянка трав’яна', 230)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Cherry+Tincture" alt="Настоянка вишнева">
+      <h3 id="product3-name">Настоянка вишнева</h3>
+      <p id="product3-price">Ціна: 240₴</p>
+      <button onclick="addToCart('Настоянка вишнева', 240)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Berry+Tincture" alt="Настоянка ягідна">
+      <h3 id="product4-name">Настоянка ягідна</h3>
+      <p id="product4-price">Ціна: 225₴</p>
+      <button onclick="addToCart('Настоянка ягідна', 225)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Honey+Tincture" alt="Настоянка медова">
+      <h3 id="product5-name">Настоянка медова</h3>
+      <p id="product5-price">Ціна: 250₴</p>
+      <button onclick="addToCart('Настоянка медова', 250)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Spice+Tincture" alt="Настоянка пряна">
+      <h3 id="product6-name">Настоянка пряна</h3>
+      <p id="product6-price">Ціна: 235₴</p>
+      <button onclick="addToCart('Настоянка пряна', 235)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Lemon+Tincture" alt="Настоянка лимонна">
+      <h3 id="product7-name">Настоянка лимонна</h3>
+      <p id="product7-price">Ціна: 215₴</p>
+      <button onclick="addToCart('Настоянка лимонна', 215)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Apple+Tincture" alt="Настоянка яблучна">
+      <h3 id="product8-name">Настоянка яблучна</h3>
+      <p id="product8-price">Ціна: 245₴</p>
+      <button onclick="addToCart('Настоянка яблучна', 245)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Plum+Tincture" alt="Настоянка сливова">
+      <h3 id="product9-name">Настоянка сливова</h3>
+      <p id="product9-price">Ціна: 230₴</p>
+      <button onclick="addToCart('Настоянка сливова', 230)">Додати до кошика</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150?text=Peach+Tincture" alt="Настоянка персикова">
+      <h3 id="product10-name">Настоянка персикова</h3>
+      <p id="product10-price">Ціна: 255₴</p>
+      <button onclick="addToCart('Настоянка персикова', 255)">Додати до кошика</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
