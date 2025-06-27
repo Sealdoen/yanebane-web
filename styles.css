@@ -58,22 +58,22 @@ body {
   color: #ffffff;
   display: flex;
   align-items: center;
-  transition: transform 0.3s ease; /* Плавна анімація для стрілки */
+  transition: transform 0.3s ease;
 }
 
 .language-button .arrow {
   margin-left: 5px;
-  transition: transform 0.3s ease; /* Анімація повороту стрілки */
+  transition: transform 0.3s ease;
 }
 
 .language-button.active .arrow {
-  transform: rotate(90deg); /* Поворот стрілки вниз при активації */
+  transform: rotate(90deg);
 }
 
 .language-dropdown {
-  display: none; /* Спочатку приховане */
+  display: none;
   position: absolute;
-  top: 100%; /* Розташування під кнопкою */
+  top: 100%;
   right: 0;
   background-color: #000000;
   border: 2px solid #ffffff;
@@ -81,11 +81,11 @@ body {
   min-width: 100px;
   box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
   z-index: 1001;
-  animation: slideDown 0.3s ease; /* Анімація появи */
+  animation: slideDown 0.3s ease;
 }
 
 .language-dropdown.show {
-  display: block; /* Показується при додаванні класу .show */
+  display: block;
 }
 
 .language-dropdown button {
@@ -118,6 +118,8 @@ h1 {
   font-size: 2.5rem;
   margin: 20px 0;
   color: #ff0000;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 2px;
 }
 
 h2 {
