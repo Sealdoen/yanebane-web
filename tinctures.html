@@ -3,23 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YANE BANE - Настоянки</title>
+  <title>YANE BANE</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="header">
-    <div class="back-icon" onclick="window.location.href='index.html'">
-      ←
-    </div>
-    <div class="cart-icon" onclick="window.location.href='cart.html'">
-      🛒 <span id="cart-count">0</span>
-    </div>
+    <span class="back-icon" onclick="window.location.href='index.html'">←</span>
+    <span class="cart-icon" onclick="window.location.href='cart.html'">🛒 <span id="cart-count">0</span></span>
     <div class="language-switcher">
       <button onclick="setLanguage('uk')">🇺🇦 UA</button>
       <button onclick="setLanguage('en')">🇬🇧 EN</button>
     </div>
   </div>
-  <h2>Оберіть товар:</h2>
+
+  <h1 id="store-title">🍷 YANE BANE</h1>
+  <h2 id="select-product">Оберіть товар:</h2>
+
   <div class="product-list">
     <div class="product">
       <img src="images/mint_tincture.jpg" alt="Mint Tincture">
@@ -82,6 +81,7 @@
       <button onclick="addToCart(document.getElementById('product10-name').textContent, parseInt(document.getElementById('product10-price').textContent.split(' ')[1]))">Додати до кошика</button>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
