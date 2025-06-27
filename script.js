@@ -97,18 +97,32 @@ function setLanguage(newLang) {
   localStorage.setItem('lang', lang);
   updateUI();
   const dropdown = document.querySelector('.language-dropdown');
-  if (dropdown) dropdown.classList.remove('show'); // Ховаємо dropdown після вибору
+  const button = document.querySelector('.language-button');
+  if (dropdown && button) {
+    dropdown.classList.remove('show');
+    button.classList.remove('active');
+  }
   updateLanguageButton();
 }
 
 function updateLanguageButton() {
   const button = document.querySelector('.language-button');
-  if (button) button.textContent = lang === 'uk' ? '🇺🇦 UA' : '🇬🇧 EN';
+  if (button) {
+    button.textContent = lang === 'uk' ? '🇺🇦 UA' : '🇬🇧 EN';
+    const arrow = button.querySelector('.arrow');
+    if (arrow) arrow.textContent = ' ▶'; // Початкова стрілка вправо
+  }
 }
 
 function toggleLanguageDropdown() {
   const dropdown = document.querySelector('.language-dropdown');
-  if (dropdown) dropdown.classList.toggle('show');
+  const button = document.querySelector('.language-button');
+  if (dropdown && button) {
+    const isActive = button.classList.toggle('active');
+    dropdown.classList.toggle('show', isActive);
+    const arrow = button.querySelector('.arrow');
+    if (arrow) arrow.textContent = isActive ? ' ▼' : ' ▶'; // Зміна стрілки
+  }
 }
 
 function updateUI() {
@@ -270,7 +284,7 @@ function sendOrder() {
 window.onload = function() {
   updateUI();
   updateCart();
-  updateLanguageButton(); // Ініціалізація кнопки мови
+  updateLanguageButton();
 };
 
 // Додаємо обробник подій для закриття dropdown при кліку поза ним
@@ -279,5 +293,8 @@ document.addEventListener('click', function(event) {
   const button = document.querySelector('.language-button');
   if (dropdown && button && !button.contains(event.target) && !dropdown.contains(event.target)) {
     dropdown.classList.remove('show');
+    button.classList.remove('active');
+    const arrow = button.querySelector('.arrow');
+    if (arrow) arrow.textContent = ' ▶';
   }
 });
