@@ -119,10 +119,12 @@ h2 {
 
 .product h3 {
   margin: 10px 0 5px;
+  color: #ff0000; /* Явне визначення кольору */
 }
 
 .product p {
   margin: 5px 0;
+  color: #ff0000; /* Явне визначення кольору */
 }
 
 .product img {
