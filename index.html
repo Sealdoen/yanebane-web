@@ -12,8 +12,13 @@
       🛒 <span id="cart-count">0</span>
     </div>
     <div class="language-switcher">
-      <button onclick="setLanguage('uk')">🇺🇦 UA</button>
-      <button onclick="setLanguage('en')">🇬🇧 EN</button>
+      <button class="language-button" onclick="toggleLanguageDropdown()">
+        <span></span><span class="arrow"> ▶</span>
+      </button>
+      <div class="language-dropdown">
+        <button onclick="setLanguage('uk')">🇺🇦 UA</button>
+        <button onclick="setLanguage('en')">🇬🇧 EN</button>
+      </div>
     </div>
   </div>
   <h1 id="store-title">🍷 YANE BANE</h1>
